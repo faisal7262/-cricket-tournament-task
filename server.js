@@ -25,8 +25,17 @@ const TournamentRouter = require('./routes/tournament');
 
 const TeamRouter = require('./routes/teams');
 
+const GroupRouter = require('./routes/group');
+
+const StageRouter = require('./routes/stage');
+
+const Qrouter = require('./routes/qualifier');
+
+app.use('/qualifier',Qrouter);
 app.use('/tournament',TournamentRouter);
-app.use('/teams',TeamRouter);
+app.use('/team',TeamRouter);
+app.use('/group',GroupRouter);
+app.use('/stage',StageRouter);
 
 
 app.listen(port, () => {

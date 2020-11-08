@@ -9,16 +9,11 @@ router.route('/').get((req,res) => {
 });
 
 router.route('/add').post((req, res) => {
-  const tournamentStage = req.body.tournamentStage;
   const startDate = Date.parse(req.body.startDate);
   const endDate = Date.parse(req.body.endDate);
-  const isActive = Number(req.body.isActive);
-
   const newTournament = new Tournament({
-    tournamentStage,
     startDate,
     endDate,
-    isActive
   });
 
   newTournament.save()

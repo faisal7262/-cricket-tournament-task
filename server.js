@@ -23,9 +23,10 @@ connection.once('open', () => {
 
 const TournamentRouter = require('./routes/tournament');
 
+const TeamRouter = require('./routes/teams');
 
 app.use('/tournament',TournamentRouter);
-
+app.use('/teams',TeamRouter);
 
 
 app.listen(port, () => {

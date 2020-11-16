@@ -16,8 +16,9 @@ router.route('/addQualifier').post((req,res) => {
   const teamName2 = req.body.teamName2;
   const groupB = req.body.groupB;
   const points2 = Number(req.body.points2);
-  const matchDate = Date.parse(req.body.matchDate);
   const team2Status = req.body.team2Status;
+  const matchDate = Date.parse(req.body.matchDate);
+  
   
 
   const newQualifier = new Qualifier({
@@ -29,8 +30,9 @@ router.route('/addQualifier').post((req,res) => {
     teamName2,
     groupB,
     points2,
-    matchDate,
     team2Status,
+    matchDate,
+    
   });
 
   newQualifier.save()
@@ -54,7 +56,7 @@ router.route('/update/:id').post((req,res) => {
       qualifier.team1Status = req.body.team1Status;
       qualifier.teamName2 = req.body.teamName2;
       qualifier.groupB = req.body.groupB;
-      qualifier.points2 = req.body.points2;
+      qualifier.points2 = Number(req.body.points2);
       qualifier.matchDate = Date.parse(req.body.matchDate);
       qualifier.team2Status = req.body.team2Status;
 
